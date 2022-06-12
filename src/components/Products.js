@@ -5,12 +5,18 @@ export default function Products(props){
     const url = 'https://fakestoreapi.com/products';
     const [product, setProduct] = useState([]);
     const [cart, setCart] = useState([]);
+
     //let content = null;
 
     const addToCart = (item) => {
         console.log("we on on add to cart now");
         setCart([...cart,item])
+       
     }
+
+    /*const getTotalSum = () => {
+        return arr.reduce((prevProd,curProd) => prevProd + curProd,0);
+    }*/
 
     const fetchData = () => {
         fetch(url)
@@ -28,9 +34,10 @@ export default function Products(props){
     },[])
 
     return(
+    
         <div className="clearfix">
         <div className="row">
-            <header><button>Go to cart ({cart.length})</button></header>
+        <header><button type="button" class="button"><span class="button__icon"><ion-icon name="cart-outline"></ion-icon></span><span class="button__text">Go to cart ({cart.length})</span></button></header>
           {product.map(data => (
             <div className="col-md-4 animated fadeIn" key={data.id}>
               <div className="card">
@@ -45,9 +52,9 @@ export default function Products(props){
                   <h5 className="card-title">
                     {data.title}
                   </h5>
-                  <h4>{data.category}</h4>
-                  <h3>${data.price}</h3>
-                  <div><button onClick={() => addToCart(data)}>Add to Cart</button></div>
+                  <h6>{data.category}</h6>
+                  <h5>${data.price}</h5>
+                  <div><button type="button" class="btn btn-outline-info" onClick={() => addToCart(data)}>Add to Cart</button></div>
                 </div>
               </div>
             </div>
@@ -55,6 +62,7 @@ export default function Products(props){
         </div>
     
       </div>
+    
        
     )
 

@@ -8,10 +8,9 @@ function App() {
   return (
     <div className="App">
       <Navbar></Navbar>
-      <div>
-        <Products></Products>
-        <Cart></Cart>
-      </div>
+      <Products></Products>
+      <Cart></Cart>
+
     </div>
   );
 }
