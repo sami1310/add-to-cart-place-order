@@ -5,7 +5,6 @@ export default function Navbar(props){
         <header>
            <div>
             <a href="#/">
-                <button>Go to Cart</button>
             </a>
            </div>
         </header>

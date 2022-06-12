@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+.product-img {
+  width: 140px;
+  margin: auto;
+}
+.product-img img {
+  border: solid 6px transparent;
+  border-radius: 50%;
+}
+
+header{
+background-color: rgb(127, 251, 255);
+height: 60px;
+padding-top: 20px;
+}
+
